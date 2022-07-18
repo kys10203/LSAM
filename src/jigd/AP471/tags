@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AP471Blocking_io	cnfg471.c	/^int AP471Blocking_io(int nHandle, struct AP471_isr_info *isr_info, long *addr, long value, long cmd)$/;"	f
+AP471_isr_info	AP471.h	/^struct AP471_isr_info$/;"	s
+APBOARD	AP471.h	55;"	d
+BUILDING_FOR_KERNEL	dev471/dev471.c	41;"	d	file:
+BoardIntEnableStat	AP471.h	/^  uint32_t BoardIntEnableStat;         \/* board interrupt enable register *\/$/;"	m	struct:sblk471
+DEBCLOCK	AP471.h	68;"	d
+DEBCONTROL	AP471.h	69;"	d
+DEBDURATION	AP471.h	70;"	d
+DEVICE_NAME	AP471.h	56;"	d
+DebounceClockSelect	AP471.h	/^  uint32_t DebounceClockSelect;		\/* Bit 0 *\/$/;"	m	struct:map471
+DebounceClockSelectStat	AP471.h	/^  uint32_t DebounceClockSelectStat;    \/* Bit 0 *\/$/;"	m	struct:sblk471
+DebounceControl	AP471.h	/^  uint32_t DebounceControl[3];		\/* Bits 15:0 *\/$/;"	m	struct:map471
+DebounceControlStat	AP471.h	/^  uint32_t DebounceControlStat[3];     \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+DebounceDuration	AP471.h	/^  uint32_t DebounceDuration[3];		\/* Bits 15:0 *\/$/;"	m	struct:map471
+DebounceDurationStat	AP471.h	/^  uint32_t DebounceDurationStat[3];    \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+EV_ENABLE	AP471.h	65;"	d
+EV_POLARITY	AP471.h	67;"	d
+EV_TYPE	AP471.h	66;"	d
+EventEnable	AP471.h	/^  uint32_t EventEnable[3];    \/* interrupt enable register *\/$/;"	m	struct:cblk471
+EventEnableReg	AP471.h	/^  uint32_t EventEnableReg[3];           \/* Bits 15:0 *\/$/;"	m	struct:map471
+EventEnableStat	AP471.h	/^  uint32_t EventEnableStat[3];         \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+EventPending	AP471.h	/^  uint32_t EventPending[3];	\/* board interrupt pending flags *\/$/;"	m	struct:AP471_isr_info
+EventPendingClrReg	AP471.h	/^  uint32_t EventPendingClrReg[3];	\/* Bits 15:0 *\/$/;"	m	struct:map471
+EventPendingClrStat	AP471.h	/^  uint32_t EventPendingClrStat[3];     \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+EventPolarity	AP471.h	/^  uint32_t EventPolarity[3];  \/* event polarity registers *\/$/;"	m	struct:cblk471
+EventPolarityReg	AP471.h	/^  uint32_t EventPolarityReg[3];         \/* Bits 15:0 *\/$/;"	m	struct:map471
+EventPolarityStat	AP471.h	/^  uint32_t EventPolarityStat[3];       \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+EventType	AP471.h	/^  uint32_t EventType[3];      \/* event type registers *\/$/;"	m	struct:cblk471
+EventTypeReg	AP471.h	/^  uint32_t EventTypeReg[3];             \/* Bits 15:0 *\/$/;"	m	struct:map471
+EventTypeStat	AP471.h	/^  uint32_t EventTypeStat[3];           \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+FPGAAdrData	AP471.h	/^  uint32_t FPGAAdrData[10];   \/* FPGA address & data order:0,1,2,20 thru 26 *\/$/;"	m	struct:cblk471
+FirmwareRevision	AP471.h	/^  uint32_t FirmwareRevision;		\/* 7:0 *\/$/;"	m	struct:map471
+IORegister	AP471.h	/^  uint32_t IORegister[3];		\/* Bits 15:0 *\/$/;"	m	struct:map471
+ISR	dev471/dev471.c	/^static struct AP471_isr_info ISR[MAX_APS];	\/* Interrupt Status Registers *\/$/;"	v	typeref:struct:AP471_isr_info	file:
+InterruptHandlerThread	drvr471.c	/^void * InterruptHandlerThread(void * arg)$/;"	f
+InterruptRegister	AP471.h	/^  uint32_t InterruptRegister;		\/* Bits 15:0 *\/$/;"	m	struct:map471
+KDIR	dev471/Makefile	/^KDIR := \/lib\/modules\/$(shell uname -r)\/build # use this line for Fedora\/CentOS $/;"	m
+LIBS	makefile	/^LIBS := -lpthread$/;"	m
+LocationRegister	AP471.h	/^  uint32_t LocationRegister;		\/* Bits 15:0 *\/$/;"	m	struct:map471
+MAJOR_NUM	dev471/dev471.c	64;"	d	file:
+MASK	AP471.h	64;"	d
+MODCFLAGS	makefile	/^MODCFLAGS := -Wall$/;"	m
+MODULE	dev471/Makefile	/^MODULE := $(TARGET).ko$/;"	m
+MaskRegStat	AP471.h	/^  uint32_t MaskRegStat[3];             \/* Bits 15:0 *\/$/;"	m	struct:sblk471
+NAMES	dev471/Makefile	/^NAMES := dev471$/;"	m
+OBJS	dev471/Makefile	/^OBJS  := $(addsuffix .o, $(NAMES))$/;"	m
+PWD	dev471/Makefile	/^PWD := $(shell pwd)$/;"	m
+Reserved1	AP471.h	/^  unsigned char Reserved1[0x0188];$/;"	m	struct:map471
+SoftwareReset	AP471.h	/^  uint32_t SoftwareReset;		\/* Bit 0 *\/$/;"	m	struct:map471
+Status	AP471.h	/^  uint32_t Status;$/;"	m	struct:AP471_isr_info
+TARGET	dev471/Makefile	/^TARGET := ap471$/;"	m
+WriteMask	AP471.h	/^  uint32_t WriteMask[3];      \/* output port mask registers *\/$/;"	m	struct:cblk471
+WriteMaskReg	AP471.h	/^  uint32_t WriteMaskReg[3];             \/* Bits 15:0 *\/$/;"	m	struct:map471
+XDAC_AddressReg	AP471.h	/^  uint32_t XDAC_AddressReg;$/;"	m	struct:map471
+XDAC_StatusControl	AP471.h	/^  uint32_t XDAC_StatusControl;$/;"	m	struct:map471
+abWaitQueueFlag	dev471/dev471.c	/^static int abWaitQueueFlag[MAX_APS];		\/* wait queues flags *\/$/;"	v	file:
+ap471_handler	dev471/dev471.c	/^ap471_handler( int irq, void *did, struct pt_regs *cpu_regs )$/;"	f	file:
+ap471_ops	dev471/dev471.c	/^static struct file_operations ap471_ops = {$/;"	v	typeref:struct:file_operations	file:
+apWaitQueue	dev471/dev471.c	/^static wait_queue_head_t apWaitQueue[MAX_APS];	\/* wait queues for inputs *\/$/;"	v	file:
+ap_address	dev471/dev471.c	/^unsigned long ap_address[MAX_APS];$/;"	v
+bAP	AP471.h	/^  BOOL bAP;                   \/* flag indicating board is open *\/$/;"	m	struct:cblk471
+bInitialized	AP471.h	/^  BOOL bInitialized;          \/* flag indicating ready to talk to board *\/	$/;"	m	struct:cblk471
+bd_enable	AP471.h	/^  uint32_t bd_enable;         \/* board interrupt enable register *\/$/;"	m	struct:cblk471
+board_irq	dev471/dev471.c	/^unsigned int board_irq[MAX_APS];$/;"	v
+brd_ptr	AP471.h	/^  struct map471 *brd_ptr;     \/* base address of the I\/O board *\/$/;"	m	struct:cblk471	typeref:struct:cblk471::map471
+cblk471	AP471.h	/^struct cblk471$/;"	s
+cleanup_module	dev471/dev471.c	/^cleanup_module( void )$/;"	f
+cnfg471	cnfg471.c	/^void cnfg471(struct cblk471 *c_blk)$/;"	f
+deb_clock	AP471.h	/^  uint32_t deb_clock;         \/* debounce clock select register *\/$/;"	m	struct:cblk471
+deb_control	AP471.h	/^  uint32_t deb_control[3];    \/* debounce control registers *\/$/;"	m	struct:cblk471
+deb_duration	AP471.h	/^  uint32_t deb_duration[3];   \/* debounce duration registers *\/$/;"	m	struct:cblk471
+device_ioctl	dev471/dev471.c	/^device_ioctl( struct file *fp, unsigned int cmd, unsigned long arg)$/;"	f	file:
+devnamebuf	dev471/dev471.c	/^char devnamebuf[MAX_APS][32];$/;"	v
+get_reg_num	drvr471.c	/^static unsigned get_reg_num()$/;"	f	file:
+init_module	dev471/dev471.c	/^init_module( void )$/;"	f
+location	AP471.h	/^  uint16_t location;          \/* AP location *\/$/;"	m	struct:cblk471
+main	drvr471.c	/^int main(int argc, char *argv[])$/;"	f
+map471	AP471.h	/^struct map471$/;"	s
+msi_status	dev471/dev471.c	/^int msi_status[MAX_APS];$/;"	v
+nHandle	AP471.h	/^  int nHandle;                \/* handle to an open board *\/$/;"	m	struct:cblk471
+obj-m	dev471/Makefile	/^obj-m := $(TARGET).o$/;"	m
+open	dev471/dev471.c	/^open( struct inode *inode, struct file *fp )$/;"	f	file:
+open_dev	dev471/dev471.c	/^int open_dev[MAX_APS];$/;"	v
+p471Board	dev471/dev471.c	/^struct pci_dev *p471Board[MAX_APS];$/;"	v	typeref:struct:pci_dev
+param	AP471.h	/^  uint16_t param;             \/* parameter mask for configuring board *\/$/;"	m	struct:cblk471
+psts471	drvr471.c	/^void psts471(struct cblk471 *c_blk)$/;"	f
+read	dev471/dev471.c	/^read( struct file *fp, char *buf, size_t length, loff_t *offset )$/;"	f	file:
+release	dev471/dev471.c	/^release( struct inode *inode, struct file *fp )$/;"	f	file:
+ret_val	dev471/dev471.c	/^int ret_val = 0;$/;"	v
+revision	AP471.h	/^  uint32_t revision;          \/* Firmware Revision *\/$/;"	m	struct:cblk471
+rpnt471	rpnt471.c	/^uint16_t rpnt471(struct cblk471 *c_blk, uint16_t port, uint16_t point)$/;"	f
+rprt471	rprt471.c	/^uint16_t rprt471(struct cblk471 *c_blk, uint16_t port)$/;"	f
+rsts471	rsts471.c	/^void rsts471(struct cblk471 *c_blk)$/;"	f
+sblk471	AP471.h	/^struct sblk471$/;"	s
+sblk_ptr	AP471.h	/^  struct sblk471 *sblk_ptr;   \/* Status block pointer *\/$/;"	m	struct:cblk471	typeref:struct:cblk471::sblk471
+scfg471	drvr471.c	/^void scfg471(struct cblk471 *c_blk)$/;"	f
+wpnt471	wpnt471.c	/^uint16_t wpnt471(struct cblk471 *c_blk, uint16_t port, uint16_t point, uint16_t value)$/;"	f
+wprt471	wprt471.c	/^uint16_t wprt471(struct cblk471 *c_blk, uint16_t port, uint16_t value)$/;"	f
+write	dev471/dev471.c	/^write( struct file *fp, const char *buf, size_t length, loff_t *offset )$/;"	f	file:

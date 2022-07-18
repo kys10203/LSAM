@@ -1,0 +1,26 @@
+
+
+
+
+mount -t nfs -o nolock 192.168.10.176:/nfs /nfsTmp
+
+
+
+
+mount -t nfs -o nfsvers=3 192.168.10.183:/home/buntu/nfs /mnt/nfs
+
+
+
+
+mount -t nfs -o nfsvers=3 192.168.10.140:/home/buntu/nfs /mnt/nfs
+
+
+
+
+
+sudo mount -t nfs -o nfsvers=3 192.168.10.140:/D/Users/digitron/Downloads /mnt/nfs
+
+
+
+
+

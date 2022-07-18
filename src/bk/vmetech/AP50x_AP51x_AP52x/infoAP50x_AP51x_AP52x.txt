@@ -1,0 +1,202 @@
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Acromag, Inc.
+                                  30765 S.Wixom Road
+			
+                              Wixom, Michigan 48393-7037
+
+                                Phone: (248)295-0310
+                                 FAX: (248)624-9234
+
+                                Linux Software Library
+                    Information File for AP50x_AP51x_AP52x Boards
+                                        V1.0
+                                      11/07/18
+
+
+
+
+               The  information  in this manual is subject to  change
+               without notice.   Acromag,  Inc.  makes no warranty of
+               any kind with regard to this material and accompanying
+               software,  including, but not limited to , the implied
+               warranties  of  merchantability  and  fitness  for   a
+               particular   purpose.    Acromag,   Inc.   assumes  no
+               responsibility for any errors that may appear in  this
+               manual and accompanying software.
+
+               See GPL.txt and LGPL.txt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	1. Overview
+
+	This  "information"  file  contains a description of  the driver
+	software used for  the following Acromag Industrial  I/O Boards:
+
+	AP500, AP512, AP513, AP520, AP521, and AP522 Serial Communication
+        Boards.
+
+	2. Introduction
+
+	The standard Linux serial port driver may  be  used  with  AP500,
+	AP512, AP513, AP520, AP521, and AP522 boards.  A multiport driver
+        is also available from  EXAR Corporation, XR17V35x  see their web
+        site for additional information.
+
+	3. Getting Ready To Install
+
+	If you have more  than 2 or 4 serial ports, you must insure  that
+	the kernel knows this.   It can be done by configuring the kernel
+	when  compiling  or by  a parameter  given to the  kernel when it 
+	starts (boot-prompt or kernel command line).
+	The kernel configuration parameters:
+	CONFIG_SERIAL_8250_RUNTIME_UARTS=4, CONFIG_SERIAL_8250_NR_UARTS=4
+	set  the  maximum  number  of serial  ports (UARTs)  equal  to 4.
+	If you have more than 4 serial ports, then you need to change the
+	4 to whatever.  As root, you  may override this  via  the  kernel
+	boot  command  line,   for  example,  adding "8250.nr_uarts=16"
+	to the /etc/default/grub file, (see Grub command line below).
+
+	GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/swap vconsole.font=latarcyrheb-sun16 
+	rd.lvm.lv=fedora/root $([ -x /usr/sbin/rhcrashkernel-param ] && 
+	/usr/sbin/rhcrashkernel-param || :) 8250.nr_uarts=16 rhgb quiet"
+
+	This change can be made with a text editor with root permission.
+	As root, from the /etc/default directory, run
+	grub2-mkconfig -o /boot/grub2/grub.cfg.  This will create a new
+	configuration based on the currently running system.
+
+	4 Finding Your New Serial Ports
+
+	With power turned off, install the AP5xx hardware,  boot up the
+	system, and use the lspci -vv command to verify the hardware is
+	present.      The  output for  AP520 and AP521, AP522 should be
+        something like the following:
+
+	Serial controller: Exar Corp. Device 0358 (rev 03) (prog-if 02 [16550])
+
+	For AP500, AP512, and AP513 serial communication hardware:
+
+	Serial controller: Exar Corp. Device 0354 (rev 03) (prog-if 02 [16550])
+
+	Now open a terminal session as root and use the dmesg -w command.
+	Drag terminal session windows scroll  bar to the top  line in the
+	dmesg -w  terminal session window and use Search->Find and search
+	for 'tty'. The output should be  something like the following for
+	AP520, AP521, and AP522 XR17V35X  serial  communication hardware:
+
+	ACPI: PCI Interrupt Link [APC4] enabled at IRQ 19
+	ttyS4 at MMIO 0xfd9fc000 (irq = 19) is a XR17V35X
+	ttyS5 at MMIO 0xfd9fc400 (irq = 19) is a XR17V35X
+	ttyS6 at MMIO 0xfd9fc800 (irq = 19) is a XR17V35X
+	ttyS7 at MMIO 0xfd9fcc00 (irq = 19) is a XR17V35X
+	ttyS8 at MMIO 0xfd9fd000 (irq = 19) is a XR17V35X
+	ttyS9 at MMIO 0xfd9fd400 (irq = 19) is a XR17V35X
+	ttyS1 at MMIO 0xfd9fd800 (irq = 19) is a XR17V35X
+	ttyS2 at MMIO 0xfd9fdc00 (irq = 19) is a XR17V35X
+
+	For AP500, AP512 and AP513 XR17V35X serial communication hardware:
+
+	ACPI: PCI Interrupt Link [APC4] enabled at IRQ 19
+	ttyS4 at MMIO 0xfd9fc000 (irq = 19) is a XR17V35X
+	ttyS5 at MMIO 0xfd9fc400 (irq = 19) is a XR17V35X
+	ttyS6 at MMIO 0xfd9fc800 (irq = 19) is a XR17V35X
+	ttyS7 at MMIO 0xfd9fcc00 (irq = 19) is a XR17V35X
+
+	Verify the correct  number of  serial ports  are present without
+	errors reported.
+
+	5 Other Useful Programs and Commands to Use With Serial Ports
+
+	The  Setserial  command  allows  easy modification of the serial
+	port operating parameters. It can be installed by  executing the
+	following command: dnf install setserial.
+	Putty  is  a terminal emulation program for serial communication
+	ports and allows  the user  to  transmit and  receive characters
+	over  the  serial port.    It can be installed by  executing the
+	following command: dnf install putty.
+	To use  setserial or putty commands, as root set  the permission
+	of  each  of  the  serial  port(s) to be used to allow user mode
+	access with the following command(s):
+
+	su -c'chmod 666 /dev/ttyS0'
+	su -c'chmod 666 /dev/ttyS1'
+			.
+			.
+			.
+	su -c'chmod 666 /dev/ttyS7'
+
+	7 For AP521 and AP522 RS422/RS485 operation, unzip the file xr17v25x_35x-lnx2.6.32-and-newer-pak.zip,
+          it will create a new folder named xr17v25x_35x-lnx2.6.32-and-newer-pak.
+          In the xr17v25x_35x-lnx2.6.32-and-newer-pak folder, rename the xr17v35x.c file to xr17v35x.old.
+          Copy the file named xr17v35xAP521.c into the xr17v25x_35x-lnx2.6.32-and-newer-pak folder
+          and rename xr17v35xAP521.c to xr17v35x.c.
+
+          Use the makefile in the xr17v25x_35x-lnx2.6.32-and-newer-pak folder to build the AP52x RS422/RS485 driver.
+
+          Next, as root, unbind or use the rmmod command to remove the default RS232 Linux driver.
+
+          rmmod 8250_exar
+
+          Now use insmod to load the AP52x RS422/RS485 driver.
+
+          insmod xr17v35x.ko
+
+          The RS422/RS485 driver creates traditional serial device names, "/dev/ttyXR0" onwards.
+
+	  To use  setserial or putty commands, as root set  the permission of each of the
+          serial port(s)to be used to allow user mode access with the following command(s):
+
+	  su -c'chmod 666 /dev/ttyXR0'
+	  su -c'chmod 666 /dev/ttyXR1'
+			.
+			.
+			.
+	  su -c'chmod 666 /dev/ttyXR7'
+
+
+
+END
+
+
